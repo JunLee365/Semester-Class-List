@@ -1,0 +1,42 @@
+<!--
+[0] [1] [2] [3]
+Days & Times:       [4] [5] to [6]
+Meeting Dates:      [7] to [8]
+Duration:           [9] min, [10]
+Building, Room:     [11], [12] 
+Instructor:         [13]
+Capacity:           [14]
+Waitlist Capacity:  [15]
+Cmbnd Descr:        [16]
+Cmbnd Enrl Cap:     [17]
+    
+CSE 101 Lec 1
+Days & Times:       MWF 11:00AM to 11:53 AM
+Meeting Dates:      25-Jan-21 to 19-May-21
+Duration, Mode:     53 min, In Person 
+Building, Room:     TBA, TBA 
+Instructor:         Kevin McConnell
+Capacity:           210
+Waitlist Capacity:  70
+Cmbnd Descr:        -
+Cmbnd Enrl Cap:     -
+
+Jav                 -0: "CSE"        
+course              -1: "101"        
+component           -2: "LEC"        
+Sctn                -3: "1"      
+Days                -4: "MWF"        
+Start Time          -5: "11:00 AM"   
+End Time            -6: "11:53 AM"   
+Mtg Start Date      -7: "25-Jan-21"  
+Mtg End Date        -8: "19-May-21"  
+Duration            -9: "53"         
+Instruction Mode    -10: "In Person"
+Building            -11: "TBA"
+Room                -12: "TBA"
+Instr               -13: "Kevin McDonnell"
+Enrl Cap            14: "210"
+Wait Cap,           15: "70"
+Cmbnd Descr         16: ""
+Cmbnd Enrl Cap      17: ""
+-->
