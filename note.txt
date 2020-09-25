@@ -36,6 +36,21 @@ console.log("Waitlist Capacity: " + allCourses[0][15]);
 console.log("Cmbnd Descr: " + allCourses[0][16]);
 console.log("Cmbnd Enrl Cap: " + allCourses[0][17]);*/
 
+/*<div id="cse101" style="visibility: hidden">
+            <table border="1" cellpadding="1" cellspacing="1" style="width: 100%;">
+                CSE 101 Lec 1
+                <tr><td>Days & Times:</td>          <td>MWF 11:00AM to 11:53 AM</td></tr>
+                <tr></tr><td>Meeting Dates:</td>    <td>25-Jan-21 to 19-May-21</td></tr>
+                <tr><td>Duration, Mode:</td>        <td>53 min, In Person</td></tr>
+                <tr><td>Building, Room:</td>        <td>TBA, TBA</td></tr>
+                <tr><td>Instructor:</td>            <td>Kevin McConnell</td></tr>
+                <tr><td>Capacity:</td>              <td>210</td></tr>
+                <tr><td>Waitlist Capacity:</td>     <td>70</td></tr>
+                <tr><td>Combined Descr:</td>        <td>-</td></tr>
+                <tr><td>Combined Enrl Cap:</td>     <td>-</td></tr>
+            </table>
+        </div>*/
+
 Print with indexes:
 [0] [1] [2] [3]
 Days & Times:       [4] [5] to [6]

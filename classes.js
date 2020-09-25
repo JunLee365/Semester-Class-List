@@ -1,4 +1,4 @@
-/*Jav, course, component, Sctn, Days, Start Time, End Time, Mtg Start Date, Mtg End Date, Duration, Instruction Mode, Building, Room, Instr, Enrl Cap, Wait Cap, Cmbnd Descr, Cmbnd Enrl Cap*/
+/*Jav, course, component, Section, Days, Start Time, End Time, Meeting Start Date, Meeting End Date, Duration, Instruction Mode, Building, Room, Instructor, Enrollment Cap, Wait Cap, Cmbnd Descr, Cmbnd Enrl Cap*/
 
 let course1 = ["CSE","101","LEC","1","MWF","11:00 AM","11:53 AM","25-Jan-21","19-May-21","53","In Person","TBA","TBA","Kevin McDonnell","210","70","",""];
 let course2 = ["CSE","101","LAB","L01","M","12:00 PM","12:53 PM","25-Jan-21","19-May-21","53","In Person","COMPUTER SCI","2114","Kevin McDonnell","30","10"," "," "];
@@ -105,24 +105,125 @@ let allCourses = [course1,course2,course3,course4,course5,course6,course7,course
 /* A function to change the visibility of an element */
 function check(value){
 	if(document.getElementById(value).checked == true){
-        console.log(value);
         let elem = document.getElementById(value).parentElement;    // makes the <div><table><tr><td> elements
         let Newdiv = document.createElement("div");                 // This will be placed inside the 
         let table = document.createElement("table");
 
-        let col1 = document.createElement("td");    // done for a sample: a row with two columns
-        let col2 = document.createElement("td");    // prints: Days & times: a
-        col1.innerHTML += "Days & Times:";          // OBJECTIVE: try to get it to print the actual date and time
-        col2.innerHTML += allCourses[value][4];
+        // Row 1
+        // Days & Times:       [4] [5] to [6]
+        {let col1 = document.createElement("td");    
+        let col2 = document.createElement("td");    
+        col1.innerHTML += "Days & Times:";          
+        col2.innerHTML += allCourses[value][4] + ", " + allCourses[value][5] + " to " + allCourses[value][6];
 
         let row1 = document.createElement("tr");    // both columns are inserted into the row
-        row1.appendChild(col1);
-        row1.appendChild(col2);
+        row1.appendChild(col1); row1.appendChild(col2);
 
         table.appendChild(row1);                    // one row is inserted into the table
         Newdiv.appendChild(table);                  // table is inserted into the div
-        Newdiv.id = value + 'c';                    // div is given an id attr
-        elem.appendChild(Newdiv);                   // div in appended with the label (it shouldn't be nested)
+        }
+        
+        // Row 2
+        // Meeting Dates:      [7] to [8]
+        {col1 = document.createElement("td");    
+        col2 = document.createElement("td");    
+        col1.innerHTML += "Meeting Dates:";          
+        col2.innerHTML += allCourses[value][7] + " to " + allCourses[value][8];
+
+        row1 = document.createElement("tr");    // both columns are inserted into the row
+        row1.appendChild(col1); row1.appendChild(col2);
+
+        table.appendChild(row1);                    // one row is inserted into the table
+        Newdiv.appendChild(table);                  // table is inserted into the div
+        }
+
+        // Row 3
+        // Duration:           [9] min, [10]
+        {col1 = document.createElement("td");    
+        col2 = document.createElement("td");    
+        col1.innerHTML += "Duration:";          
+        col2.innerHTML += allCourses[value][9] + " min,  " + allCourses[value][10];
+
+        row1 = document.createElement("tr");    // both columns are inserted into the row
+        row1.appendChild(col1); row1.appendChild(col2);
+
+        table.appendChild(row1);                    // one row is inserted into the table
+        Newdiv.appendChild(table);                  // table is inserted into the div
+        }
+        
+        // Row 4
+        // Building, Room:     [11], [12] 
+        {col1 = document.createElement("td");    
+        col2 = document.createElement("td");    
+        col1.innerHTML += "Building, Room:";          
+        col2.innerHTML += allCourses[value][11] + ", " + allCourses[value][12];
+
+        row1 = document.createElement("tr");    // both columns are inserted into the row
+        row1.appendChild(col1); row1.appendChild(col2);
+
+        table.appendChild(row1);                    // one row is inserted into the table
+        Newdiv.appendChild(table);                  // table is inserted into the div
+        }
+        
+        // Row 5
+        // Instructor:         [13]
+        {col1 = document.createElement("td");    
+        col2 = document.createElement("td");    
+        col1.innerHTML += "Instructor:";          
+        col2.innerHTML += allCourses[value][13];
+
+        row1 = document.createElement("tr");    // both columns are inserted into the row
+        row1.appendChild(col1); row1.appendChild(col2);
+
+        table.appendChild(row1);                    // one row is inserted into the table
+        Newdiv.appendChild(table);                  // table is inserted into the div
+        }
+        
+        // Row 6
+        // Capacity, Waitlist Capacity:[14], [15]
+        {col1 = document.createElement("td");    
+        col2 = document.createElement("td");    
+        col1.innerHTML += "Capacity, Waitlist Capacity:";          
+        col2.innerHTML += allCourses[value][14] + ", " + allCourses[value][15];
+
+        row1 = document.createElement("tr");    // both columns are inserted into the row
+        row1.appendChild(col1); row1.appendChild(col2);
+
+        table.appendChild(row1);                    // one row is inserted into the table
+        Newdiv.appendChild(table);                  // table is inserted into the div
+        }
+        
+        // Row 7
+        // Combined Description:        [16]
+        {col1 = document.createElement("td");    
+        col2 = document.createElement("td");    
+        col1.innerHTML += "Combined Descriptior:";          
+        col2.innerHTML += allCourses[value][16];
+
+        row1 = document.createElement("tr");    // both columns are inserted into the row
+        row1.appendChild(col1); row1.appendChild(col2);
+
+        table.appendChild(row1);                    // one row is inserted into the table
+        Newdiv.appendChild(table);                  // table is inserted into the div
+        }
+        
+        // Row 8
+        // Combined Enrollment Cap:     [17]
+        {col1 = document.createElement("td");    
+        col2 = document.createElement("td");    
+        col1.innerHTML += "Combined Enrollment Cap:";          
+        col2.innerHTML += allCourses[value][17];
+
+        row1 = document.createElement("tr");    // both columns are inserted into the row
+        row1.appendChild(col1); row1.appendChild(col2);
+
+        table.appendChild(row1);                    // one row is inserted into the table
+        Newdiv.appendChild(table);                  // table is inserted into the div
+        }
+
+        // complete: give the div an id and append to the label
+        Newdiv.id = value + 'c';    // div is given an id attr
+        elem.append(Newdiv);        // div in appended with the label (it shouldn't be nested)
     }   
     else{
         document.getElementById(value + 'c').remove();
@@ -149,5 +250,5 @@ This works, but this sucks a lot. There must be a different way to do this*/
 for (let i = 0; i < allCourses.length; i++){
 document.getElementById("ClassList").innerHTML +=
 '<label><input type="checkbox" id="'+ i +'"onclick="check' + "(id)" + '"/>'+
-allCourses[i][0] + "-" + allCourses[i][1] + " " + allCourses[i][2] + " " + allCourses[i][3]+'</label><br>'
+allCourses[i][0] + "-" + allCourses[i][1] + " " + allCourses[i][2] + " " + allCourses[i][3]+'</label><br><br>'
 }
