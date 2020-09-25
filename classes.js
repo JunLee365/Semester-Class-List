@@ -103,13 +103,30 @@ let course100 = ["CSE","645","SEM","S01","TH","11:30 AM","12:50 PM","25-Jan-21",
 let allCourses = [course1,course2,course3,course4,course5,course6,course7,course8,course9,course10,course11,course12,course13,course14,course15,course16,course17,course18,course19,course20,course21,course22,course23,course24,course25,course26,course27,course28,course29,course30,course31,course32,course33,course34,course35,course36,course37,course38,course39,course40,course41,course42,course43,course44,course45,course46,course47,course48,course49,course50,course51,course52,course53,course54,course55,course56,course57,course58,course59,course60,course61,course62,course63,course64,course65,course66,course67,course68,course69,course70,course71,course72,course73,course74,course75,course76,course77,course78,course79,course80,course81,course82,course83,course84,course85,course86,course87,course88,course89,course90,course91,course92,course93,course94,course95,course96,course97,course98,course99,course100];
 
 /* A function to change the visibility of an element */
-function flipVisibility(obj) {
-    dom = document.getElementById(obj).style;
+function flipVisibility(id) {
+    dom = document.getElementById(id).style;
     if (dom.visibility == "visible" || dom.visibility == "show")
         dom.visibility = "hidden";
     else
         dom.visibility = "visible";
 }
 
-console.log(allCourses[0]);
-console.log(allCourses[1]);
+/* A loop to get each of the classes. ALL of the HTML content has been moved into JS; had to do a lot of string conversion.
+This works, but this sucks a lot. There must be a different way to do this*/
+for (let i = 0; i < allCourses.length; i++){
+document.getElementById("visibilityControl").innerHTML +=
+'<label><input type="checkbox" onclick="flipVisibility' + "('"+allCourses[i][0] + allCourses[i][1] + allCourses[i][2] + allCourses[i][3]+"')" + '"/>'+
+allCourses[i][0] + allCourses[i][1] + allCourses[i][2] + allCourses[i][3]+'</label>'+
+'<div id=' + '"' + allCourses[i][0] + allCourses[i][1] + allCourses[i][2] + allCourses[i][3] + '"' +
+'style="visibility: hidden">'+
+'<table border="1" cellpadding="1" cellspacing="1" style="width: 100%;">'+
+allCourses[i][0] + " " + allCourses[i][1] + " " + allCourses[i][2] + " " + allCourses[i][3]+
+'<tr><td>Days & Times:</td><td>' + allCourses[i][4] + " " + allCourses[i][5] + " to " + allCourses[i][6] + '</td></tr>'+
+'<tr></tr><td>Meeting Dates:</td><td>' + allCourses[i][7] + " to " + allCourses[i][8] + '</td></tr>'+
+'<tr><td>Duration, Mode:</td><td>' + allCourses[i][9] + " min, " + allCourses[i][10] + '</td></tr>'+
+'<tr><td>Building, Room:</td><td>' + allCourses[i][11] + ", " +allCourses[i][12] + '</td></tr>'+
+'<tr><td>Instructor:</td><td>' + allCourses[i][13] +'</td></tr>'+
+'<tr><td>Capacity:</td><td>' + allCourses[i][14]+ '</td></tr>'+
+'<tr><td>Waitlist Capacity:</td><td>' + allCourses[i][15] + '</td></tr>'+
+'<tr><td>Combined Descr:</td><td>' + allCourses[i][16] + '</td></tr>'+
+'<tr><td>Combined Enrl Cap:</td><td>' + allCourses[i][17] +'</td></tr></table></div>';}

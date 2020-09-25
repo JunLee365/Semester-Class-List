@@ -2,61 +2,37 @@
 <html>
 <head>
 <title>JLee CSE 316 HW#2</title>
-<script src = "classes.js"></script>
+
+
 </head>
 <body>
-    <form name="visibilityControl">
-        <p><label><input type="checkbox" name="choser"onclick="flipVisibility('cse101')"/>CSE101</label></p>
+    <form id="visibilityControl">
+        <!--<label><input type="checkbox" onclick="flipVisibility('cse101')"/>CSE 101</label>
         <div id="cse101" style="visibility: hidden">
             <table border="1" cellpadding="1" cellspacing="1" style="width: 100%;">
                 CSE 101 Lec 1
-                <tr>
-                    <td>Days & Times:</td>
-                    <td>MWF 11:00AM to 11:53 AM</td>
-                </tr>
-                <tr>
-                    <td>Meeting Dates:</td>
-                    <td>25-Jan-21 to 19-May-21</td>
-                </tr>
-                <tr>
-                    <td>Duration, Mode:</td>
-                    <td>53 min, In Person</td>
-                </tr>
-                <tr>
-                    <td>Building, Room:</td>
-                    <td>TBA, TBA</td>
-                </tr>
-                <tr>
-                    <td>Instructor:</td>
-                    <td>Kevin McConnell</td>
-                </tr>
-                <tr>
-                    <td>Capacity:</td>
-                    <td>210</td>
-                </tr>
-                <tr>
-                    <td>Waitlist Capacity:</td>
-                    <td>70</td>
-                </tr>
-                <tr>
-                    <td>Cmbnd Descr:</td>
-                    <td>-</td>
-                </tr>
-                <tr>
-                    <td>Cmbnd Enrl Cap:</td>
-                    <td>-</td>
-                </tr>
+                <tr><td>Days & Times:</td>
+                    <td>MWF 11:00AM to 11:53 AM</td></tr>
+                <tr></tr><td>Meeting Dates:</td>
+                    <td>25-Jan-21 to 19-May-21</td></tr>
+                <tr><td>Duration, Mode:</td>
+                    <td>53 min, In Person</td></tr>
+                <tr><td>Building, Room:</td>
+                    <td>TBA, TBA</td></tr>
+                <tr><td>Instructor:</td>
+                    <td>Kevin McConnell</td></tr>
+                <tr><td>Capacity:</td>
+                    <td>210</td></tr>
+                <tr><td>Waitlist Capacity:</td>
+                    <td>70</td></tr>
+                <tr><td>Combined Descr:</td>
+                    <td>-</td></tr>
+                <tr><td>Combined Enrl Cap:</td>
+                    <td>-</td></tr>
             </table>
-        </div>
+        </div>-->
     </form>  
 </body>
-</html>
 
-<!--Plan: 
-- implement this into a DOM
-    - Make all the input elements into a DOM. 
-    This includes all the attributes inside the checkbox and
-    all the content and attributes in the div as well
-    - Make it so that it is removed (not hidden) when unchecked
-- Make this scalable
--->
+<script src = "classes.js"></script>
+</html>

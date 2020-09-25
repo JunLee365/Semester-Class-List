@@ -1,4 +1,42 @@
-<!--
+<!--Plan: 
+- implement this into a DOM
+    - Make all the input elements into a DOM. 
+    This includes all the attributes inside the checkbox and
+    all the content and attributes in the div as well
+    - Make it so that it is removed (not hidden) when unchecked
+- Make this scalable
+
+all <labels> must exist
+    when checked, the <div> element must exist with the addChild()
+    when unchecked, the <div> element must be removec with the removeChild()
+For now though... just use what I have. This should be done later.
+So spawn the <label> and the <div>
+-->
+
+Nested elements:
+body
+    form
+        label
+            input
+        div [this needs to add and remove]
+            table
+                tr [9 times]
+                    td
+                    td
+
+Print one class:
+/*console.log(allCourses[0][0] + " " + allCourses[0][1] + " " + allCourses[0][2] + " " + allCourses[0][3]);
+console.log("Days & Times: " + allCourses[0][4] + " " + allCourses[0][5] + " to " + allCourses[0][6]);
+console.log("Meeting Dates: " + allCourses[0][7] + " to " + allCourses[0][8]);
+console.log("Duration: " + allCourses[0][9] + " min, " + allCourses[0][10]);
+console.log("Building, Room: " + allCourses[0][11] + ", " +allCourses[0][12]);
+console.log("Instructor: " + allCourses[0][13]);
+console.log("Capacity: " + allCourses[0][14]);
+console.log("Waitlist Capacity: " + allCourses[0][15]);
+console.log("Cmbnd Descr: " + allCourses[0][16]);
+console.log("Cmbnd Enrl Cap: " + allCourses[0][17]);*/
+
+Print with indexes:
 [0] [1] [2] [3]
 Days & Times:       [4] [5] to [6]
 Meeting Dates:      [7] to [8]
@@ -10,6 +48,7 @@ Waitlist Capacity:  [15]
 Cmbnd Descr:        [16]
 Cmbnd Enrl Cap:     [17]
     
+Sample print:
 CSE 101 Lec 1
 Days & Times:       MWF 11:00AM to 11:53 AM
 Meeting Dates:      25-Jan-21 to 19-May-21
@@ -21,6 +60,7 @@ Waitlist Capacity:  70
 Cmbnd Descr:        -
 Cmbnd Enrl Cap:     -
 
+Indexes from the excel
 Jav                 -0: "CSE"        
 course              -1: "101"        
 component           -2: "LEC"        
@@ -39,4 +79,3 @@ Enrl Cap            14: "210"
 Wait Cap,           15: "70"
 Cmbnd Descr         16: ""
 Cmbnd Enrl Cap      17: ""
--->
