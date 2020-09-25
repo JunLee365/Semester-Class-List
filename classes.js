@@ -102,21 +102,50 @@ let course99 = ["CSE","600","SEM","S01","F","02:30 PM","03:30 PM","25-Jan-21","1
 let course100 = ["CSE","645","SEM","S01","TH","11:30 AM","12:50 PM","25-Jan-21","19-May-21","80","In Person","TBA","TBA","Paul Fodor; Michael Kifer; C Ramakrishnan; Yanhong Liu","30","0"," "," "];
 let allCourses = [course1,course2,course3,course4,course5,course6,course7,course8,course9,course10,course11,course12,course13,course14,course15,course16,course17,course18,course19,course20,course21,course22,course23,course24,course25,course26,course27,course28,course29,course30,course31,course32,course33,course34,course35,course36,course37,course38,course39,course40,course41,course42,course43,course44,course45,course46,course47,course48,course49,course50,course51,course52,course53,course54,course55,course56,course57,course58,course59,course60,course61,course62,course63,course64,course65,course66,course67,course68,course69,course70,course71,course72,course73,course74,course75,course76,course77,course78,course79,course80,course81,course82,course83,course84,course85,course86,course87,course88,course89,course90,course91,course92,course93,course94,course95,course96,course97,course98,course99,course100];
 
+/* A loop to make checkmark each of the classes
+ALL of the HTML content are made with JS*/
+let main = document.getElementById("ClassList");
+let addLabel;let addInput;
+for (let i = 0; i < allCourses.length; i++){
+    addLabel = document.createElement("label");
+    addInput = document.createElement("input");
+    addLabel.innerHTML += '<input type="checkbox" id="'+ i +'"onclick="check' + "(id)" + '"/>';
+    addLabel.innerHTML += allCourses[i][0] + "-" + allCourses[i][1] + " " + 
+                          allCourses[i][2] + " " + allCourses[i][3] + "<br>";
+    main.appendChild(addLabel)
+    main.innerHTML += "<br>";
+}
+    
 /* A function to change the visibility of an element */
 function check(value){
 	if(document.getElementById(value).checked == true){
-        let elem = document.getElementById(value).parentElement;    // makes the <div><table><tr><td> elements
-        let Newdiv = document.createElement("div");                 // This will be placed inside the 
+        let elem = document.getElementById(value).parentElement;    // make the <div><table><tr><td> elements
+        let Newdiv = document.createElement("div");                 
         let table = document.createElement("table");
+
+        // Row 0
+        // Class:       [0] [1] [2] [3]
+        {let col1 = document.createElement("td");    
+        let col2 = document.createElement("td");    
+        col1.innerHTML += "Class:";          
+        col2.innerHTML += allCourses[value][0] + "-" + allCourses[value][1] + " " + 
+                          allCourses[value][2] + " " + allCourses[value][3];
+
+        let row1 = document.createElement("tr");    // both columns are inserted into the row
+        row1.appendChild(col1); row1.appendChild(col2);
+
+        table.appendChild(row1);                    // one row is inserted into the table
+        Newdiv.appendChild(table);                  // table is inserted into the div
+        }
 
         // Row 1
         // Days & Times:       [4] [5] to [6]
-        {let col1 = document.createElement("td");    
-        let col2 = document.createElement("td");    
+        {col1 = document.createElement("td");    
+        col2 = document.createElement("td");    
         col1.innerHTML += "Days & Times:";          
         col2.innerHTML += allCourses[value][4] + ", " + allCourses[value][5] + " to " + allCourses[value][6];
 
-        let row1 = document.createElement("tr");    // both columns are inserted into the row
+        row1 = document.createElement("tr");        // both columns are inserted into the row
         row1.appendChild(col1); row1.appendChild(col2);
 
         table.appendChild(row1);                    // one row is inserted into the table
@@ -130,7 +159,7 @@ function check(value){
         col1.innerHTML += "Meeting Dates:";          
         col2.innerHTML += allCourses[value][7] + " to " + allCourses[value][8];
 
-        row1 = document.createElement("tr");    // both columns are inserted into the row
+        row1 = document.createElement("tr");        // both columns are inserted into the row
         row1.appendChild(col1); row1.appendChild(col2);
 
         table.appendChild(row1);                    // one row is inserted into the table
@@ -144,7 +173,7 @@ function check(value){
         col1.innerHTML += "Duration:";          
         col2.innerHTML += allCourses[value][9] + " min,  " + allCourses[value][10];
 
-        row1 = document.createElement("tr");    // both columns are inserted into the row
+        row1 = document.createElement("tr");        // both columns are inserted into the row
         row1.appendChild(col1); row1.appendChild(col2);
 
         table.appendChild(row1);                    // one row is inserted into the table
@@ -155,10 +184,10 @@ function check(value){
         // Building, Room:     [11], [12] 
         {col1 = document.createElement("td");    
         col2 = document.createElement("td");    
-        col1.innerHTML += "Building, Room:";          
+        col1.innerHTML += "Building & Room:";          
         col2.innerHTML += allCourses[value][11] + ", " + allCourses[value][12];
 
-        row1 = document.createElement("tr");    // both columns are inserted into the row
+        row1 = document.createElement("tr");        // both columns are inserted into the row
         row1.appendChild(col1); row1.appendChild(col2);
 
         table.appendChild(row1);                    // one row is inserted into the table
@@ -172,7 +201,7 @@ function check(value){
         col1.innerHTML += "Instructor:";          
         col2.innerHTML += allCourses[value][13];
 
-        row1 = document.createElement("tr");    // both columns are inserted into the row
+        row1 = document.createElement("tr");        // both columns are inserted into the row
         row1.appendChild(col1); row1.appendChild(col2);
 
         table.appendChild(row1);                    // one row is inserted into the table
@@ -183,10 +212,10 @@ function check(value){
         // Capacity, Waitlist Capacity:[14], [15]
         {col1 = document.createElement("td");    
         col2 = document.createElement("td");    
-        col1.innerHTML += "Capacity, Waitlist Capacity:";          
+        col1.innerHTML += "Capacity & Waitlist Capacity:";          
         col2.innerHTML += allCourses[value][14] + ", " + allCourses[value][15];
 
-        row1 = document.createElement("tr");    // both columns are inserted into the row
+        row1 = document.createElement("tr");        // both columns are inserted into the row
         row1.appendChild(col1); row1.appendChild(col2);
 
         table.appendChild(row1);                    // one row is inserted into the table
@@ -200,7 +229,7 @@ function check(value){
         col1.innerHTML += "Combined Descriptior:";          
         col2.innerHTML += allCourses[value][16];
 
-        row1 = document.createElement("tr");    // both columns are inserted into the row
+        row1 = document.createElement("tr");        // both columns are inserted into the row
         row1.appendChild(col1); row1.appendChild(col2);
 
         table.appendChild(row1);                    // one row is inserted into the table
@@ -214,7 +243,7 @@ function check(value){
         col1.innerHTML += "Combined Enrollment Cap:";          
         col2.innerHTML += allCourses[value][17];
 
-        row1 = document.createElement("tr");    // both columns are inserted into the row
+        row1 = document.createElement("tr");        // both columns are inserted into the row
         row1.appendChild(col1); row1.appendChild(col2);
 
         table.appendChild(row1);                    // one row is inserted into the table
@@ -228,27 +257,4 @@ function check(value){
     else{
         document.getElementById(value + 'c').remove();
     }
-}
-
-/*
-'<div id=' + '"' + i + '"' +
-'style="visibility: hidden">'+
-
-'<table border="1" cellpadding="1" cellspacing="1" style="width: 100%;">'+
-'<tr><td>Days & Times:</td><td>' + allCourses[i][4] + " " + allCourses[i][5] + " to " + allCourses[i][6] + '</td></tr>'+
-'<tr></tr><td>Meeting Dates:</td><td>' + allCourses[i][7] + " to " + allCourses[i][8] + '</td></tr>'+
-'<tr><td>Duration, Mode:</td><td>' + allCourses[i][9] + " min, " + allCourses[i][10] + '</td></tr>'+
-'<tr><td>Building, Room:</td><td>' + allCourses[i][11] + ", " +allCourses[i][12] + '</td></tr>'+
-'<tr><td>Instructor:</td><td>' + allCourses[i][13] +'</td></tr>'+
-'<tr><td>Capacity:</td><td>' + allCourses[i][14]+ '</td></tr>'+
-'<tr><td>Waitlist Capacity:</td><td>' + allCourses[i][15] + '</td></tr>'+
-'<tr><td>Combined Descr:</td><td>' + allCourses[i][16] + '</td></tr>'+
-'<tr><td>Combined Enrl Cap:</td><td>' + allCourses[i][17] +'</td></tr></table></div>';*/
-
-/* A loop to get each of the classes. ALL of the HTML content has been moved into JS; had to do a lot of string conversion.
-This works, but this sucks a lot. There must be a different way to do this*/
-for (let i = 0; i < allCourses.length; i++){
-document.getElementById("ClassList").innerHTML +=
-'<label><input type="checkbox" id="'+ i +'"onclick="check' + "(id)" + '"/>'+
-allCourses[i][0] + "-" + allCourses[i][1] + " " + allCourses[i][2] + " " + allCourses[i][3]+'</label><br><br>'
 }
