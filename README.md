@@ -1,2 +1,2 @@
-# CSE-316-HW2
-HW#2 for CSE 316
+# Semester-Class-List
+HW#2 for CSE 316 - Used JS to display a list of 100+ SBU classes
